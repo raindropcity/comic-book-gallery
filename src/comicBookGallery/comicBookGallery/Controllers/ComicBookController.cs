@@ -4,8 +4,11 @@ using System.Diagnostics;
 
 namespace comicBookGallery.Controllers
 {
-        public class ComicBookControllers : Controller
+    public class ComicBookController : Controller
+    {
+        public string Detail()
         {
-            
+            return "Hello(from ComicBookController)";
         }
+    }
 }
