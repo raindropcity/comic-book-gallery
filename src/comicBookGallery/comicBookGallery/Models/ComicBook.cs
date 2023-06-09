@@ -10,6 +10,23 @@ namespace ComicBookGallery.Models
         public string DescriptionHtml { get; set; }
         public Artist[] Artists { get; set; }
         public bool Favorite { get; set; }
+
+        public string DisplayText
+        {
+            get
+            {
+                return SeriesTitle + " #" + IssueNumber;
+            }
+        }
+
+        // 要找漫畫的圖片名，預計圖片檔名會長這樣： series-title-issuenumber.jpg
+        public string CoverImageFileName
+        {
+            get
+            {
+                return SeriesTitle.Replace(" ", "-").ToLower() + "-" + IssueNumber + ".jpg";
+            }
+        }
     }
 }
 
