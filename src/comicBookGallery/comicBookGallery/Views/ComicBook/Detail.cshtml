@@ -1,8 +1,26 @@
 @{
-    ViewData["Title"] = "Home Page";
+    Layout = null;
+
+    var seriesTitle = "The Amazing Spider-Man";
+    var issueNumber = 700;
+    var description = "<p>Witness <strong>the Doctor Octopus'</strong> revenge!</p>";
+    var artists = new string[]
+    {
+        "Script: Dan Slott",
+        "Pencils: Humberto Ramos",
+        "Inks: Victor Olazaba",
+        "Colors: Edgar Delgado",
+        "Letters: Chris Eliopoulos"
+    };
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1>@seriesTitle</h1>
+    <h2>Issue number: @issueNumber</h2>
+
+    <h5>Description:</h5>
+    <div>@Html.Raw(description)</div>
+
+    <h5>Artists:</h5>
+    <div>@artists</div>
 </div>
