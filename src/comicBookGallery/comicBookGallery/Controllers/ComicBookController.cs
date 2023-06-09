@@ -8,8 +8,7 @@ namespace comicBookGallery.Controllers
     {
         public ActionResult Detail()
         {
-            // 這是Controller內建的方法
-            Content("Hello(from ComicBookController)");
+            return View();
         }
     }
 }
