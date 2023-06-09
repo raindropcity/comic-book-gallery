@@ -6,9 +6,12 @@ namespace comicBookGallery.Controllers
 {
     public class ComicBookController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello(from ComicBookController)";
+            // 這是Controller內建的方法
+            Content("Hello(from ComicBookController)");
         }
     }
 }
+
+// RedirectResult class is another action result that MVC provide. Used to redirect user another URL
