@@ -1,25 +1,30 @@
-﻿using comicBookGallery.Models;
+﻿using ComicBookGallery.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace comicBookGallery.Controllers
+namespace ComicBookGallery.Controllers
 {
     public class ComicBookController : Controller
     {
         public ActionResult Detail()
         {
-            ViewBag.SeriesTitle = "The Amazing Spider-Man";
-            ViewBag.IssueNumber = 700;
-            ViewBag.Description = "<p>Witness <strong>the Doctor Octopus'</strong> revenge!</p>";
-            ViewBag.Artists = new string[]
+            var comicBook = new ComicBook()
             {
-                "Script: Dan Slott",
-                "Pencils: Humberto Ramos",
-                "Inks: Victor Olazaba",
-                "Colors: Edgar Delgado",
-                "Letters: Chris Eliopoulos"
+                SeriesTitle = "The Amazing Spider-Man",
+                IssueNumber = 700,
+                DescriptionHtml = "<p>Witness <strong>the Doctor Octopus'</strong> revenge!</p>",
+                Artists = new Artist[]
+                {
+                    new Artist() { Name = "Script", Role = "Dan Slott" },
+                    new Artist() { Name = "Pencils", Role = "Humberto Ramos" },
+                    new Artist() { Name = "Inks", Role = "Victor Olazaba" },
+                    new Artist() { Name = "Colors", Role = "Edgar Delgado" },
+                    new Artist() { Name = "Letters", Role = "Chris Eliopoulos" },
+                }
             };
-            return View();
+
+            return View(comicBook);
         }
     }
 }
